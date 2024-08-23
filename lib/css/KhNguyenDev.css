@@ -1,0 +1,192 @@
+
+
+/*# sourceMappingURL=bootstrap.min.css.map */
+.conversations .conversations-content {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.messages-wrapper .messages-body .message-content-wrapper,
+.conversations-body .message-content-wrapper {
+    display: inline-block;
+    width: 100%;
+}
+
+.messages-wrapper .messages-body .message,
+.conversations-body .message {
+    display: table;
+    table-layout: fixed;
+    padding: 8px 0;
+}
+
+.messages-wrapper .messages-body .message-in,
+.conversations-body .message-in {
+    margin-right: 40px;
+    float: left;
+}
+
+.messages-wrapper .messages-body .message-in .message-body,
+.conversations-body .message-in .message-body {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .message-content,
+.conversations-body .message-in .message-body .message-content {
+    background: #f7f7f7;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    position: relative;
+    width: fit-content;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .message-content:before,
+.conversations-body .message-in .message-body .message-content:before {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #f7f7f7;
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 12px;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .message-content .name,
+.conversations-body .message-in .message-body .message-content .name {
+    color: #83848a;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .message-content .content,
+.conversations-body .message-in .message-body .message-content .content {
+    font-size: 13px;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .date,
+.conversations-body .message-in .message-body .date {
+    margin-left: 10px;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #83848a;
+    padding-left: 12px;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .message-content+.message-content,
+.conversations-body .message-in .message-body .message-content+.message-content {
+    margin-top: 10px;
+}
+
+.messages-wrapper .messages-body .message-in .message-body .message-content+.message-content:before,
+.conversations-body .message-in .message-body .message-content+.message-content:before {
+    display: none;
+}
+
+/*      Conversations Wrapper     */
+.conversations {
+    display: flex;
+    height: calc(100vh - 57px);
+    flex-direction: column;
+}
+
+.conversations .message-header {
+    background: #fff;
+    padding: .5rem;
+    box-shadow: 0 1px 0 0 rgba(61, 70, 79, 0.075);
+    z-index: 1;
+}
+
+.conversations .message-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.conversations .message-title .user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conversations .message-title .user .name {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 2px;
+}
+
+.conversations .message-title .user .last-active {
+    display: block;
+    font-size: 11px;
+}
+
+.conversations .message-title .return {
+    background: transparent;
+    border: 0;
+    font-size: 25px;
+    cursor: pointer;
+    height: 100%;
+    top: 0;
+}
+
+.conversations .conversations-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 2rem;
+}
+
+.conversations .conversations-content {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.conversations .messages-form {
+    margin: 0;
+    padding: .7rem 1rem;
+    background: #fff;
+}
+
+.conversations-action {
+    background: #f6f6f6;
+    padding: 10px 0;
+}
+
+.conversations-action .action {
+    display: flex;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.conversations-action .action:hover {
+    background: #f4f5f5;
+}
+
+.conversations-action .action span {
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.conversations-action .action i {
+    font-size: 21px;
+    width: 2.5rem;
+    color: rgba(38, 50, 56, 0.5);
+}
+
+.conversations-action .action.danger span,
+.conversations-action .action.danger i {
+    color: #F25961;
+}
+
+.conversations-action .action:last-child {
+    margin-bottom: 0px;
+}

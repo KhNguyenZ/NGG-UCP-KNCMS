@@ -1,0 +1,100 @@
+# Bảo vệ file .htaccess
+<files .htaccess="">
+order allow,deny
+deny from all
+</files>
+
+RewriteEngine On
+
+# ErrorDocument 404$ public/404.php
+ErrorDocument 404 public/404.php
+
+# KNCMS AUTH
+
+RewriteRule ^VerifyAccount$ public/client/auth/active_account.php [L]
+
+RewriteRule ^Auth/Login$ public/client/auth/login.php [L]
+RewriteRule ^Auth/Register$ public/client/auth/register.php [L]
+RewriteRule ^Auth/Logout$ public/client/auth/logout.php [L]
+RewriteRule ^Test$ public/client/auth/test.php [L]
+RewriteRule ^Auth/ForgotPassword$ public/client/auth/quenmatkhau.php [L]
+
+# KNCMS HOME
+RewriteRule ^Home$ index.php [L]
+
+# KNCMS LIST
+
+RewriteRule ^List/Admin$ public/client/list/admin.php [L]
+RewriteRule ^List/Banned$ public/client/list/banned.php [L]
+RewriteRule ^List/Faction$ public/client/list/faction.php [L]
+RewriteRule ^List/Biz$ public/client/list/biz.php [L]
+
+RewriteRule ^Top/Money$ public/client/top/money.php [L]
+RewriteRule ^Top/Level$ public/client/top/level.php [L]
+RewriteRule ^Top/PriceOOC$ public/client/top/priceooc.php [L]
+RewriteRule ^Top/Online$ public/client/top/hours.php [L]
+RewriteRule ^Top/Pot$ public/client/top/pot.php [L]
+RewriteRule ^Top/Crack$ public/client/top/crack.php [L]
+RewriteRule ^Top/Materials$ public/client/top/materials.php [L]
+RewriteRule ^Top/VIP$ public/client/top/vip.php [L]
+RewriteRule ^Top/Gun$ public/client/top/gun.php [L]
+RewriteRule ^Top/CarVoucher$ public/client/top/CarVoucher.php [L]
+RewriteRule ^Top/Rimkit$ public/client/top/rimkit.php [L]
+RewriteRule ^Top/VehicleVoucher$ public/client/top/VehicleVoucher.php [L]
+RewriteRule ^Top/Svipvoucher$ public/client/top/svipvoucher.php [L]
+RewriteRule ^Top/Gvipvoucher$ public/client/top/Gvipvoucher.php [L]
+RewriteRule ^Top/Vehicles$ public/client/top/Vehicles.php [L]
+
+# KNCMS SHOP
+RewriteRule ^Shop/VatPham$ public/client/shops/item.php [L]
+RewriteRule ^Shop/Oto$ public/client/shops/car.php [L]
+RewriteRule ^Shop/Moto$ public/client/shops/moto.php [L]
+RewriteRule ^Shop/MayBay$ public/client/shops/maybay.php [L]
+RewriteRule ^Shop/TauThuyen$ public/client/shops/tauthuyen.php [L]
+RewriteRule ^Shop/Toys$ public/client/shops/toys.php [L]
+RewriteRule ^Rename$ public/client/shops/rename.php [L]
+# SHOP DETAIL
+RewriteRule ^Shop/VehicleDetail/([A-Za-z0-9-_]+)$ public/client/detail/vehicle.php?name=$1 [L]
+RewriteRule ^Shop/ToyDetail/([A-Za-z0-9-_]+)$ public/client/detail/toys.php?name=$1 [L]
+RewriteRule ^Shop/ItemDetail/([A-Za-z0-9-_]+)$ public/client/detail/item.php?name=$1 [L]
+
+
+RewriteRule ^Player/([A-Za-z-_]+)$ public/client/player/profile.php?name=$1 [L]
+RewriteRule ^PlayerLog$ public/client/player/log.php [L]
+RewriteRule ^NapTien$ public/client/player/trans.php [L]
+RewriteRule ^UploadMP3$ public/client/player/upload.php [L]
+RewriteRule ^PivateMP3$ /private_upload [L]
+RewriteRule ^Chat$ public/client/player/boxchat.php [L]
+RewriteRule ^Giftcode$ public/client/player/giftcode.php [L]
+RewriteRule ^BaoLoi$ public/client/player/report.php [L]
+RewriteRule ^CreatePin$ public/client/player/createpin.php [L]
+RewriteRule ^AccountSetting$ public/client/player/setting.php [L]
+
+RewriteRule ^Auth/Active/([A-Za-z0-9-]+) public/client/auth/active.php?code=$1 [L]
+RewriteRule ^Auth/ConfirmPassword/([A-Za-z0-9-]+) public/client/auth/confirmpassword.php?code=$1 [L]
+RewriteRule ^MomoPrivate$ server/include/MM.php [L]
+RewriteRule ^KNCMSCallback$ /server/include/callback.php [L]
+
+RewriteRule ^AdminPages$ public/admin/index.php [L]
+RewriteRule ^Backend/Active/([0-9]+)$ public/admin/backend/active.php?uid=$1 [L]
+RewriteRule ^EditUser/([A-Za-z-_]+)$ public/admin/player/edit-user.php?username=$1 [L]
+RewriteRule ^AdminPages/VerifyEmail$ public/admin/player/verify_email.php [L]
+RewriteRule ^AdminPages/ListMembers$ public/admin/player/list_member.php [L]
+RewriteRule ^AdminPages/ListItems$ public/admin/server/item.php [L]
+RewriteRule ^AdminPages/ListGiftocde$ public/admin/server/giftcode.php [L]
+RewriteRule ^AdminPages/ListVehicles$ public/admin/server/vehicles.php [L]
+RewriteRule ^AdminPages/ListToys$ public/admin/server/toys.php [L]
+RewriteRule ^AdminPages/WebsiteSetting$ public/admin/server/setting.php [L]
+RewriteRule ^AdminPages/Category$ public/admin/server/danhmuc.php [L]
+RewriteRule ^AdminPages/Pages$ public/admin/server/page.php [L]
+RewriteRule ^AdminPages/Crash$ public/admin/server/crash.php [L]
+RewriteRule ^Backend/EditCategory/([A-Za-z0-9-_]+)$ public/admin/backend/editdanhmuc.php?category=$1 [L]
+RewriteRule ^Backend/EditShopVeh/([A-Za-z0-9-_]+)$ public/admin/backend/editshopveh.php?name=$1 [L]
+RewriteRule ^Backend/EditShopToys/([A-Za-z0-9-_]+)$ public/admin/backend/editshoptoy.php?name=$1 [L]
+RewriteRule ^Backend/EditShopItem/([A-Za-z0-9-_]+)$ public/admin/backend/editshopitem.php?name=$1 [L]
+RewriteRule ^Backend/EditPage/([A-Za-z0-9-_]+)$ public/admin/backend/editpage.php?page=$1 [L]
+RewriteRule ^AdminPages/LogRename$ public/admin/server/logrename.php [L]
+RewriteRule ^AdminPages/LogShopVeh$ public/admin/server/logveh.php [L]
+RewriteRule ^AdminPages/LogShopToys$ public/admin/server/logtoy.php [L]
+RewriteRule ^AdminPages/LogAdmin$ public/admin/server/logadmin.php [L]
+RewriteRule ^AdminPages/LogItem$ public/admin/server/logitem.php [L]
